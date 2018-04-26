@@ -14,9 +14,9 @@ class TestTwitter(unittest.TestCase):
         #Given
         # in setUp
         #When
-        self.twitter.AddMessage('Hello')
+        self.twitter.AddMessage('Hello 2')
         #Then
-        self.assertEqual(self.twitter.tweets, ['Hello'])
+        self.assertEqual(self.twitter.tweets, ['Hello 2'])
 
 if __name__ == '__main__':
     unittest.main()
