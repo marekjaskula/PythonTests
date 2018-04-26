@@ -4,18 +4,19 @@ from TwitterClass import Twitter
 
 
 class TestTwitter(unittest.TestCase):
+    def setUp(self):
+        self.twitter = Twitter()
 
     def test_Init(self):
-        twitter = Twitter()
-        self.assertTrue(twitter)
+        self.assertTrue(self.twitter)
 
     def test_addMessage(self):
         #Given
-        twitter =  Twitter()
+        # in setUp
         #When
-        twitter.AddMessage('Hello')
+        self.twitter.AddMessage('Hello')
         #Then
-        self.assertEqual(twitter.tweets, ['Hello'])
+        self.assertEqual(self.twitter.tweets, ['Hello'])
 
 if __name__ == '__main__':
     unittest.main()
