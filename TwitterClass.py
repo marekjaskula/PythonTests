@@ -4,6 +4,13 @@ class Twitter(object):
     def __init__(self):
         self.tweets = []
 
+    def AddMessage(self, message):
+        self.tweets.append(message)
 
-user = Twitter()
-print(user.version, user.tweets)
+twitter = Twitter()
+
+
+
+
+twitter.AddMessage('Hello')
+print(twitter.version, twitter.tweets)
