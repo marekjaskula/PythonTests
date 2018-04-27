@@ -1,3 +1,5 @@
+import pytest
+
 from TwitterClass import Twitter
 
 
@@ -11,10 +13,11 @@ def test_TwitterClassInit():
     twitter = Twitter()
     assert twitter
 
-def test_longMNessage():
+def test_longMessage():
     twitter = Twitter()
-    twitter.AddMessage('test'*31)
+    with pytest.raises(Exception):
+        twitter.AddMessage('test'*41)
     # print(twitter.tweets)
-    # assert twitter.tweets == ['test'*1]
+    assert twitter.tweets == []
 
 
