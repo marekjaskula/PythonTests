@@ -20,4 +20,9 @@ def test_longMessage():
     # print(twitter.tweets)
     assert twitter.tweets == []
 
+def test_findHashTags():
+    twitter = Twitter()
+    message = 'Hello #first message'
+    twitter.AddMessage(message)
+    assert 'first' in twitter.findHashTags(message)
 

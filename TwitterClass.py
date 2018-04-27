@@ -1,3 +1,6 @@
+import re
+
+
 class Twitter(object):
     version ="1.0"
 
@@ -8,6 +11,9 @@ class Twitter(object):
         if len(message) > 160:
             raise Exception("Wiadomośc przekracza 160 znaków")
         self.tweets.append(message)
+
+    def findHashTags(self,messege):
+        return re.findall("#(\w+ ", messege)
 
 twitter = Twitter()
 
