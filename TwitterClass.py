@@ -5,6 +5,8 @@ class Twitter(object):
         self.tweets = []
 
     def AddMessage(self, message):
+        if len(message) > 160:
+            raise Exception("Wiadomośc przekracza 160 znaków")
         self.tweets.append(message)
 
 twitter = Twitter()
